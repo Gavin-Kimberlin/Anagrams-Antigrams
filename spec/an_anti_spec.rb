@@ -3,16 +3,23 @@ require 'allergies'
 require 'pry'
 
 describe('Anagram') do
-  it('checks to see if a word is an anagram') do
-    expect(converter('elloh')).to(eq('this word is an anagram'))
+  it('checks to see if two words are anagrams') do
+    expect(converter(["hello", "olelh"])).to(eq('these words are anagrams'))
   end
 
-  it('removes the first letter of a word and adds it to the end')
-    expect(converter('hello')).to(eq('elloh'))
+  it('words should not be case sensitive') do
+    expect(converter(["hello", "HEoll"])).to(eq('these words are anagrams'))
+  end
 
-  it('removes the second to last letter of a word and adds it to the middle')
-    expect(converter('elloh')).to(eq('elolh'))
+  it('checks to see if the inputs are words') do
+    expect(converter(["not", "ton"])).to(eq('these words are anagrams'))
+  end
 
-  it('swaps the first two letters of a word')
-    expect(converter('elolh')).to(eq('leolh'))
+  it('checks to see if the inputs are antigrams if they are not anagrams') do
+    expect(converter(["ton", "eve"])).to(eq('these words are anagrams'))
+  end
+
+  it('accounts for multiple words being anagrams or antigrams') do
+    expect(converter(["not to be", "toon"])).to(eq('these words are anagrams'))
+  end
 end
