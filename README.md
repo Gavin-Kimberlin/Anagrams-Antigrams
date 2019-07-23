@@ -1,12 +1,12 @@
-# _Coin_Calculator_
+# _Anagrams_Antigrams_
 
-#### _Pair Project for Week 8 at the coding school, Epicodus, written on July 18, 2019._
+#### _Week 8 Project, written on July 19, 2019._
 
-#### By _**Daniel Hongel, Gavin Kimberlin, and Tae Lee**_
+#### By _**Gavin Kimberlin**_
 
 ## Description
 
-_This application is a lesson project from a Ruby coding class at Epicodus. It is a program that takes an amount of cents from the user and returns the smallest number of coins to represent that amount._
+_This application will determine if a word(s) is an anagram or an antigram._
 
 ## Setup/Installation Requirements
 
@@ -20,8 +20,11 @@ _This application is a lesson project from a Ruby coding class at Epicodus. It i
 ## Specs
 | Behavior | Input | Output |
 | ------------- |:-------------:| -----:|
-| | | |
-||||
+| checks to see if two words are anagrams | "hello", "olleh" | these inputs are anagrams |
+|checks to see if inputs are words| "hello", "leloh" | these inputs are words |
+| will allow words to not be case sensitive | "hello", "Hello" | these inputs are anagrams |
+| accounts for multiple words being anagrams or antigrams | "hello, hey", "olleh yeh" | these inputs are anagrams |
+| checks to see if two words are antigrams | "hello", "hab" | these inputs are not antigrams |
 
 ## Known Bugs
 
@@ -29,7 +32,7 @@ _No known bugs_
 
 ## Support and contact details
 
-_Please contact us if you have any issues at: taebumlee@gmail.com, guviner@gmail.com. or fatherofdharma@gmail.com._
+_Please contact me if you have any issues at: guviner@gmail.com_
 
 ## Technologies Used
 
@@ -41,4 +44,4 @@ _Please contact us if you have any issues at: taebumlee@gmail.com, guviner@gmail
 ### License
 _This software is licensed under MIT license._
 
-Copyright (c) 2019 **_Tae Lee and Daniel Hongel_**
+Copyright (c) 2019 **_Gavin Kimberlin_**
