@@ -6,22 +6,30 @@ describe('Anagram') do
   it('checks to see if two words are anagrams') do
     new_anagram = Anagram.new()
     new_anagram.get_input("hello", "olleh")
-    expect(new_anagram.an_check).to(eq('these words are anagrams'))
+    expect(new_anagram.an_check).to(eq('these inputs are anagrams'))
   end
-  #
-  # it('words should not be case sensitive') do
-  #   expect(converter(["hello", "HEoll"])).to(eq('these words are anagrams'))
-  # end
-  #
-  # it('checks to see if the inputs are words') do
-  #   expect(converter(["not", "ton"])).to(eq('these words are anagrams'))
-  # end
-  #
-  # it('checks to see if the inputs are antigrams if they are not anagrams') do
-  #   expect(converter(["ton", "eve"])).to(eq('these words are anagrams'))
-  # end
-  #
-  # it('accounts for multiple words being anagrams or antigrams') do
-  #   expect(converter(["not to be", "toon"])).to(eq('these words are anagrams'))
-  # end
+
+  it('checks to see if inputs are words') do
+    new_anagram = Anagram.new()
+    new_anagram.get_input("hello", "leloh")
+    expect(new_anagram.word_check).to(eq('these inputs are words'))
+  end
+
+  it('will allow words to not be case sensitive') do
+    new_anagram = Anagram.new()
+    new_anagram.get_input("hello", "Hello")
+    expect(new_anagram.an_check).to(eq('these inputs are anagrams'))
+  end
+
+  it('accounts for multiple words being anagrams or antigrams') do
+    new_anagram = Anagram.new()
+    new_anagram.get_input("hello, hey", "olleh yeh")
+    expect(new_anagram.an_check).to(eq('these inputs are anagrams'))
+  end
+
+  it('checks to see if two words are antigrams') do
+    new_anagram = Anagram.new()
+    new_anagram.get_input("hello", "hab")
+    expect(new_anagram.anti_check).to(eq('these inputs are not antigrams'))
+  end
 end
